@@ -20,6 +20,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// TODO escalate limits to config
 const (
 	LIMIT_DEFAULT = 10
 	LIMIT_MAX     = 50
