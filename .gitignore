@@ -1,0 +1,11 @@
+.idea
+Gopkg.toml
+Gopkg.lock
+config.json
+postgresql-data
+*.swo
+*.swp
+!/migrations/
+/bin
+.vendor-new
+vendor/*

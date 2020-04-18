@@ -1,0 +1,32 @@
+version: '3' 
+services:
+  app:
+      image: golang:1.10
+      volumes:
+        - .:/go/src/github.com/djumpen/go-rest-admin
+      working_dir: /go/src/github.com/djumpen/go-rest-admin
+      command: ["./entrypoint.sh"]
+      ports:
+      - "8088:8080"
+      networks:
+      - dockernet
+      restart: always
+
+  db:
+    image: postgres:9.6
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_DB: test_ex
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgres:/var/lib/postgresql/data
+      - ./postgresql-data/conf:/etc/postgresql/
+    ports:
+      - "5435:5432"
+
+volumes:
+  postgres:
+
+networks:
+  dockernet:
+    external: true

@@ -1,0 +1,18 @@
+{
+  "ReleaseMode": false,
+
+  "port": 8080,
+  "certFile": "",
+  "keyFile": "",
+  "postgres": {
+    "host": "db",
+    "username": "",
+    "password": "",
+    "database": "",
+    "port": 5432
+  },
+  "JwtConfig": {
+    "lifetime": 86400,
+    "secret": ""
+  }
+}
